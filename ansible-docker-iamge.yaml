@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+  
+  tasks:
+ - name: building docker image
+   docker_image:
+     build:
+       path: /opt/docker
+     name: simple-devops-image
+    tag: v1
+    source: build
