@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+
+ tasks:
+ - name: create simple-devops-container
+   docker_container:
+     name: simple-devops-container
+     image: simple-devops-image
+     state: present
+     recreate: yes
+     ports:
+       - "8080:8080"
